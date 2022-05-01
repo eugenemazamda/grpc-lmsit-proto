@@ -75,7 +75,7 @@ message ForgetPasswordResponse {
 }
 
 // confirm password 
-message ConfirmPassword {
+message ConfirmPasswordRequest {
     string email = 1;
     int32 code = 2;
     string newPassword = 3;
