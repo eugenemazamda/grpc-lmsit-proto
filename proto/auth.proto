@@ -60,6 +60,7 @@ message ValidateResponse {
     int32 status = 1;
     repeated string error = 2;
     repeated string success = 3;
+    string userId = 4;
 }
 
 // Forget password
