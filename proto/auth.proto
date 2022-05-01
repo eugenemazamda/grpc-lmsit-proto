@@ -42,7 +42,7 @@ string userId = 4;
 // Verify Email
 message VerifyEmailRequest {
     string email = 1;
-    int32 code = 2;
+    string code = 2;
 }
 
 message VerifyEmailResponse {
@@ -77,7 +77,7 @@ message ForgetPasswordResponse {
 // confirm password 
 message ConfirmPasswordRequest {
     string email = 1;
-    int32 code = 2;
+    string code = 2;
     string newPassword = 3;
 }
 
