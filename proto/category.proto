@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package category;
+
+service CategoryService {
+    rpc CreateCategory (CreateCategoryRequest) returns (CreateCategoryResponse) {}
+    rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+    rpc DeleteOne (DeleteOneRequest) returns (DeleteOneResponse) {}
+}
+
+// Create category
+
+message CreateCategoryRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message CreateCategoryResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    repeated string success = 3;
+    string id = 4;
+}
+
+// FindOne
+message  FindOneData {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message FindOneRequest {
+    string id = 1;
+}
+
+message FindOneResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    repeated string success = 3;
+    FindOneData data = 4;
+}
