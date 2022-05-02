@@ -5,7 +5,7 @@ package courses;
 service CoursesService {
     rpc CreateCategory (CreateCategoryRequest) returns (CreateCategoryResponse) {}
     rpc FindOne (FindOneRequestCategory) returns (FindOneResponseCategory) {}
-    rpc DeleteOne (DeleteOneRequest) returns (DeleteOneResponse) {}
+    rpc DeleteOneCategory (DeleteOneRequestCategory) returns (DeleteOneResponseCategory) {}
     rpc CreateCourses (CreateCoursesRequest) returns (CreateCoursesResponse) {}
     rpc FindOneCourses (FindOneCoursesRequest) returns (FindOneCoursesResponse) {}
     rpc DeleteCourses  (DeleteCoursesRequest) returns (DeleteCoursesResponse) {}
@@ -41,7 +41,7 @@ message FindOneResponseCategory {
     int32 status = 1;
     repeated string error = 2;
     repeated string success = 3;
-    FindOneData data = 4;
+    FindOneDataCategory data = 4;
 }
 
 // Create courses
@@ -87,3 +87,24 @@ message DecreaseCoursesResponse {
     repeated string success = 3;
 }
 
+// Delete
+
+message DeleteOneRequestCategory {
+    string id = 1;
+}
+
+message DeleteOneResponseCategory {
+    int32 status = 1;
+    repeated string error = 2;
+    string id = 3;
+}
+
+message DeleteCoursesRequest {
+    string id = 1;
+}
+
+message DeleteCoursesResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    string id = 3;
+}
