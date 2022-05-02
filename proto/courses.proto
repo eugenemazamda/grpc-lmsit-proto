@@ -64,7 +64,7 @@ message FindOneDataCourses {
     string name = 2;
     string description = 3;
     string author = 4;
-    string categoryId = 5;
+    double price = 6;
 }
 
 message FindOneCoursesRequest {
