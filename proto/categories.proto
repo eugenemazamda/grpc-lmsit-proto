@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package categories;
+
+service CoursesService {
+    rpc CreateCategory (CreateCategoryRequest) returns (CreateCategoryResponse) {}
+    rpc FindOne (FindOneRequestCategory) returns (FindOneResponseCategory) {}
+    rpc DeleteOneCategory (DeleteOneRequestCategory) returns (DeleteOneResponseCategory) {}
+}
+
+// Create category
+
+message CreateCategoryRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message CreateCategoryResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    repeated string success = 3;
+    string id = 4;
+}
+
+// FindOne
+message  FindOneDataCategory {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message FindOneRequestCategory {
+    string id = 1;
+}
+
+message FindOneResponseCategory {
+    int32 status = 1;
+    repeated string error = 2;
+    repeated string success = 3;
+    FindOneDataCategory data = 4;
+}
+
+// Delete
+message DeleteOneRequestCategory {
+    string id = 1;
+}
+
+message DeleteOneResponseCategory {
+    int32 status = 1;
+    repeated string error = 2;
+    string id = 3;
+}
