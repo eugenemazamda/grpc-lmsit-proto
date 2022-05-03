@@ -30,19 +30,18 @@ message  FindOneDataCategory {
 }
 
 message FindOneRequestCategory {
-    string id = 1;
+    string name = 1;
 }
 
 message FindOneResponseCategory {
     int32 status = 1;
     repeated string error = 2;
-    repeated string success = 3;
     FindOneDataCategory data = 4;
 }
 
 // Delete
 message DeleteOneRequestCategory {
-    string id = 1;
+    string name = 1;
 }
 
 message DeleteOneResponseCategory {
