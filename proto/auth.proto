@@ -7,9 +7,11 @@ service AuthService {
     rpc Login (LoginRequest) returns (LoginResponse) {}
     rpc Validate (ValidateRequest) returns (ValidateResponse) {}
     rpc VerifyEmail (VerifyEmailRequest) returns (VerifyEmailResponse) {}
+    rpc ResendEmailVerify (ResendEmailVerifyRequest) returns (ResendEmailVerifyResponse) {}
     rpc ForgetPassword (ForgetPasswordRequest) returns (ForgetPasswordResponse) {}
     rpc ConfirmPassword (ConfirmPasswordRequest) returns (ConfirmPasswordResponse) {}
     rpc CreateUserInDb (CreateUserInDbRequest) returns (CreateUserInDbResponse) {}
+    rpc Logout (LogoutRequest) returns (LogoutResponse) {}
 }
 
 // Register
@@ -62,8 +64,18 @@ message VerifyEmailResponse {
     repeated string error = 2;
     repeated string success = 3;
 }
-// Validate
 
+// Resend email to verify account
+message ResendEmailVerifyRequest {
+    string email = 1;
+}
+
+message ResendEmailVerifyResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    repeated string success = 3;
+}
+// Validate
 message ValidateRequest {
     string token = 1;
 }
