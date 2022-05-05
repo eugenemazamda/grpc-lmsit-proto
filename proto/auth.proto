@@ -11,7 +11,7 @@ service AuthService {
     rpc ForgetPassword (ForgetPasswordRequest) returns (ForgetPasswordResponse) {}
     rpc ConfirmPassword (ConfirmPasswordRequest) returns (ConfirmPasswordResponse) {}
     rpc CreateUserInDb (CreateUserInDbRequest) returns (CreateUserInDbResponse) {}
-    rpc Logout (LogoutRequest) returns (LogoutResponse) {}
+    // rpc Logout (LogoutRequest) returns (LogoutResponse) {}
 }
 
 // Register
