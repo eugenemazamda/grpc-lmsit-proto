@@ -8,6 +8,7 @@ service AuthService {
     rpc Validate (ValidateRequest) returns (ValidateResponse) {}
     rpc VerifyEmail (VerifyEmailRequest) returns (VerifyEmailResponse) {}
     rpc ResendEmailVerify (ResendEmailVerifyRequest) returns (ResendEmailVerifyResponse) {}
+    rpc GetProfilUsers (GetProfileUsersRequest) returns (GetProfileUsersResponse) {}
     rpc ForgetPassword (ForgetPasswordRequest) returns (ForgetPasswordResponse) {}
     rpc ConfirmPassword (ConfirmPasswordRequest) returns (ConfirmPasswordResponse) {}
     rpc CreateUserInDb (CreateUserInDbRequest) returns (CreateUserInDbResponse) {}
@@ -121,4 +122,22 @@ message LogoutResponse {
     int32 status = 1;
     repeated string error = 2;
     repeated string success = 3;
+}
+
+message GetProfileUsersRequest {
+    string userId = 1;
+}
+
+message  FindProfileUser {
+    string userId = 1;
+    string username = 2;
+    string phone_number = 3;
+    string email_verified = 4;
+}
+
+message GetProfileUsersResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    repeated string success = 3;
+    FindProfileUser data = 4;
 }
